@@ -27,6 +27,7 @@
 		FACA93032C5260F700CD9F54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA93022C5260F700CD9F54 /* Preview Assets.xcassets */; };
 		FACA93112C526AA200CD9F54 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FACA93102C526AA200CD9F54 /* SDWebImage */; };
 		FACA93132C526AA200CD9F54 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FACA93122C526AA200CD9F54 /* SDWebImageMapKit */; };
+		FAD7299D2C73BF6000582C63 /* SwiftDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7299C2C73BF6000582C63 /* SwiftDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		FACA92FB2C5260F500CD9F54 /* PeopleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleApp.swift; sourceTree = "<group>"; };
 		FACA92FF2C5260F700CD9F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACA93022C5260F700CD9F54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAD7299C2C73BF6000582C63 /* SwiftDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				FA5659F72C623ED200B42C55 /* UserViewModel.swift */,
 				FA565A0A2C624DB800B42C55 /* UserListView.swift */,
 				FA565A0E2C62601100B42C55 /* AsyncImageView.swift */,
+				FAD7299C2C73BF6000582C63 /* SwiftDetailView.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5659ED2C623D7300B42C55 /* User.swift in Sources */,
+				FAD7299D2C73BF6000582C63 /* SwiftDetailView.swift in Sources */,
 				FA565A0B2C624DB800B42C55 /* UserListView.swift in Sources */,
 				FA5659F82C623ED200B42C55 /* UserViewModel.swift in Sources */,
 				FA565A0F2C62601100B42C55 /* AsyncImageView.swift in Sources */,
