@@ -17,28 +17,41 @@ struct UserListView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.users) { user in
-                VStack(alignment: .leading) {
-      
-                    AsyncImageViewSD(url: URL(string: user.picture.large))
-                    Text("\(user.name.first) \(user.name.last)")
-                        .font(.headline)
-                    Text(user.email ??  "")
-                        .font(.subheadline)
-                }
+            VStack {
+                // Campo de búsqueda
+                TextField("Search by name or surname", text: $viewModel.searchText)
+                    .padding(8)
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+                List {
+                    ForEach(viewModel.filteredUsers) { user in
+                        NavigationLink(destination: UserDetailView(user: user)) {
+                            HStack(spacing: 16) {                            AsyncImageViewSD(url: URL(string: user.picture.large))
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 100)
+                                    .clipShape(Circle())
+                                    .padding(.top, 16)
+                                VStack(alignment: .leading) {
+                                    Text("\(user.name.first) \(user.name.last)")
+                                        .font(.headline)
+                                }
+                                .padding(.horizontal) // Padding alrededor del HStack
+                            }
+                            .onAppear {
+                                if user == viewModel.users.last {
+                                    viewModel.fetchUsers()
+                                }
+                            }
+                        }}}
+                .padding(.horizontal) // Padding alrededor del HStack
+            }            .navigationTitle("Random Users")
                 .onAppear {
-                    if user == viewModel.users.last {
+                    if viewModel.users.isEmpty {
                         viewModel.fetchUsers()
                     }
                 }
-            }
-            .navigationTitle("Random Users")
-            .onAppear {
-                if viewModel.users.isEmpty {
-                    viewModel.fetchUsers()
-                }
-            }
-        }
+        }}
     }
     
 
@@ -94,7 +107,6 @@ struct UserListView: View {
         deinit {
             cancellable?.cancel()
         }
-    }
 
 }   
 extension User: Equatable {
