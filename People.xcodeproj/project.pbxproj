@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA0A1A1B2C9B0CD800809B94 /* RxCocoa-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FA565A022C62406500B42C55 /* RxCocoa-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		EA0A1A1D2C9B0CD900809B94 /* RxBlocking-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = FA5659FE2C62406500B42C55 /* RxBlocking-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FA5659ED2C623D7300B42C55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5659EC2C623D7300B42C55 /* User.swift */; };
 		FA5659F02C623DD300B42C55 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5659EF2C623DD300B42C55 /* UserRepository.swift */; };
 		FA5659F32C623E0D00B42C55 /* UserRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5659F22C623E0D00B42C55 /* UserRemoteDataSource.swift */; };
 		FA5659F52C623E7600B42C55 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5659F42C623E7600B42C55 /* UserRepositoryImpl.swift */; };
 		FA5659F82C623ED200B42C55 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5659F72C623ED200B42C55 /* UserViewModel.swift */; };
-		FA5659FD2C62406500B42C55 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = FA5659FC2C62406500B42C55 /* RxBlocking */; };
 		FA5659FF2C62406500B42C55 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FA5659FE2C62406500B42C55 /* RxBlocking-Dynamic */; };
-		FA565A012C62406500B42C55 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = FA565A002C62406500B42C55 /* RxCocoa */; };
 		FA565A032C62406500B42C55 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FA565A022C62406500B42C55 /* RxCocoa-Dynamic */; };
-		FA565A052C62406500B42C55 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = FA565A042C62406500B42C55 /* RxRelay */; };
 		FA565A0B2C624DB800B42C55 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA565A0A2C624DB800B42C55 /* UserListView.swift */; };
 		FA565A0F2C62601100B42C55 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA565A0E2C62601100B42C55 /* AsyncImageView.swift */; };
 		FA565A112C62627C00B42C55 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = FA565A102C62627C00B42C55 /* SDWebImage */; };
@@ -29,6 +28,21 @@
 		FACA93132C526AA200CD9F54 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FACA93122C526AA200CD9F54 /* SDWebImageMapKit */; };
 		FAD7299D2C73BF6000582C63 /* SwiftDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7299C2C73BF6000582C63 /* SwiftDetailView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA0A1A1C2C9B0CD800809B94 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA0A1A1B2C9B0CD800809B94 /* RxCocoa-Dynamic in Embed Frameworks */,
+				EA0A1A1D2C9B0CD900809B94 /* RxBlocking-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FA5659EC2C623D7300B42C55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -53,10 +67,7 @@
 				FA565A162C62631900B42C55 /* SDWebImageSwiftUI in Frameworks */,
 				FACA93132C526AA200CD9F54 /* SDWebImageMapKit in Frameworks */,
 				FA565A132C62627C00B42C55 /* SDWebImageMapKit in Frameworks */,
-				FA5659FD2C62406500B42C55 /* RxBlocking in Frameworks */,
 				FA565A112C62627C00B42C55 /* SDWebImage in Frameworks */,
-				FA565A052C62406500B42C55 /* RxRelay in Frameworks */,
-				FA565A012C62406500B42C55 /* RxCocoa in Frameworks */,
 				FACA93112C526AA200CD9F54 /* SDWebImage in Frameworks */,
 				FA565A032C62406500B42C55 /* RxCocoa-Dynamic in Frameworks */,
 				FA5659FF2C62406500B42C55 /* RxBlocking-Dynamic in Frameworks */,
@@ -150,6 +161,7 @@
 				FACA92F42C5260F500CD9F54 /* Sources */,
 				FACA92F52C5260F500CD9F54 /* Frameworks */,
 				FACA92F62C5260F500CD9F54 /* Resources */,
+				EA0A1A1C2C9B0CD800809B94 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,11 +171,8 @@
 			packageProductDependencies = (
 				FACA93102C526AA200CD9F54 /* SDWebImage */,
 				FACA93122C526AA200CD9F54 /* SDWebImageMapKit */,
-				FA5659FC2C62406500B42C55 /* RxBlocking */,
 				FA5659FE2C62406500B42C55 /* RxBlocking-Dynamic */,
-				FA565A002C62406500B42C55 /* RxCocoa */,
 				FA565A022C62406500B42C55 /* RxCocoa-Dynamic */,
-				FA565A042C62406500B42C55 /* RxRelay */,
 				FA565A102C62627C00B42C55 /* SDWebImage */,
 				FA565A122C62627C00B42C55 /* SDWebImageMapKit */,
 				FA565A152C62631900B42C55 /* SDWebImageSwiftUI */,
@@ -377,7 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,7 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,30 +481,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA5659FC2C62406500B42C55 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA5659FB2C62406500B42C55 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
 		FA5659FE2C62406500B42C55 /* RxBlocking-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA5659FB2C62406500B42C55 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = "RxBlocking-Dynamic";
 		};
-		FA565A002C62406500B42C55 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA5659FB2C62406500B42C55 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
 		FA565A022C62406500B42C55 /* RxCocoa-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA5659FB2C62406500B42C55 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = "RxCocoa-Dynamic";
-		};
-		FA565A042C62406500B42C55 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FA5659FB2C62406500B42C55 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
 		};
 		FA565A102C62627C00B42C55 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
