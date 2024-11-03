@@ -14,7 +14,30 @@ struct UserListView: View {
     init(viewModel: UserViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+    // Vista de la tarjeta individual
+    struct CardView: View {
+        let persona: User
+        
+        var body: some View {
+            VStack(alignment: .leading) {
+                // Imagen
+                AsyncImageViewSD(url: URL(string: persona.picture.large))
+                // Nombre y Apellidos
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(persona.name.first)
+                        .font(.headline)
+                    
+                    Text(persona.name.last)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .padding([.top, .leading, .trailing])
+            }
+                
+  
+            }
+        }
+
     var body: some View {
         NavigationView {
             VStack {
@@ -27,24 +50,12 @@ struct UserListView: View {
                 List {
                     ForEach(viewModel.filteredUsers) { user in
                         NavigationLink(destination: UserDetailView(user: user)) {
-                            HStack(spacing: 16) {                            AsyncImageViewSD(url: URL(string: user.picture.large))
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(height: 100)
-                                    .clipShape(Circle())
-                                    .padding(.top, 16)
-                                VStack(alignment: .leading) {
-                                    Text("\(user.name.first) \(user.name.last)")
-                                        .font(.headline)
-                                }
-                                .padding(.horizontal) // Padding alrededor del HStack
-                            }
-                            .onAppear {
+                            CardView(persona:user)
+                   }       .onAppear {
                                 if user == viewModel.users.last {
                                     viewModel.fetchUsers()
                                 }
-                            }
                         }}}
-                .padding(.horizontal) // Padding alrededor del HStack
             }            .navigationTitle("Random Users")
                 .onAppear {
                     if viewModel.users.isEmpty {
@@ -55,60 +66,6 @@ struct UserListView: View {
     }
     
 
-
-    struct CardView<Content: View>: View {
-        let content: Content
-        
-        init(@ViewBuilder content: () -> Content) {
-            self.content = content()
-        }
-        
-        var body: some View {
-            content
-                .background(Color.white)
-                .cornerRadius(8)
-                .shadow(color: Color.black.opacity(0.2), radius: 8, x: 0, y: 4)
-        }
-    }
-    
-                               class ImageLoader: ObservableObject {
-        enum LoadState {
-            case loading, success(UIImage), failure
-        }
-        
-        @Published var state = LoadState.loading
-        
-        private let url: URL?
-        private var cancellable: AnyCancellable?
-        
-        init(url: URL?) {
-            self.url = url
-        }
-        
-        func load() {
-            guard let url = url else {
-                state = .failure
-                return
-            }
-            
-            cancellable = URLSession.shared.dataTaskPublisher(for: url)
-                .map { UIImage(data: $0.data) }
-                .replaceError(with: nil)
-                .receive(on: DispatchQueue.main)
-                .sink { [weak self] image in
-                    if let image = image {
-                        self?.state = .success(image)
-                    } else {
-                        self?.state = .failure
-                    }
-                }
-        }
-        
-        deinit {
-            cancellable?.cancel()
-        }
-
-}   
 extension User: Equatable {
     static func == (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id // <-- here, whatever is appropriate for you

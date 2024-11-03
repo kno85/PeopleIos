@@ -18,7 +18,13 @@ struct AsyncImageViewSD: View {
             .transition(.fade(duration: 0.5)) // Fade Transition when loading completes
             .scaledToFill()
             .clipShape(RoundedRectangle(cornerRadius: 0.8))
-            .frame(height: 150)
+            .frame(height: 250)
             .background(Color.gray.opacity(0.3))
+            .aspectRatio(contentMode: .fill)
+            .scaledToFill()
+            .frame(maxWidth: .infinity, maxHeight: 200) // Ancho completo y altura de 200
+            .clipped()
+            .cornerRadius(15) // Esquinas redondeadas
+            .padding(.top, 6)
     }
 }
