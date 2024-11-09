@@ -54,9 +54,13 @@ class UserViewModel: ObservableObject {
             filteredUsers = users
         } else {
             filteredUsers = users.filter { user in
-                user.name.first.lowercased().contains(searchText.lowercased()) ||
-                user.name.last.lowercased().contains(searchText.lowercased())
+                let firstName = user.name?.first?.lowercased() ?? ""
+                let lastName = user.name?.last?.lowercased() ?? ""
+                
+                return firstName.contains(searchText.lowercased()) ||
+                       lastName.contains(searchText.lowercased())
             }
         }
     }
+
 }
